@@ -1,0 +1,125 @@
+{% extends 'base.html'%}
+
+{%block title%}{%endblock%}
+
+{% block content%}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<head>
+<style>
+.mySlides {display:none;}
+.ff{
+max-width:100%;
+margin-top: 14px!important;
+}
+@media only screen and (max-width: 600px) {
+.ff{
+max-width:100%;
+margin-top: 10px!important;
+margin-top:51px;
+margin-left:-141px;
+width:100%;
+height:auto;
+}}
+@media only screen and (max-width: 600px) {
+.gg{
+margin-top:58px;
+margin-left:139px;
+width:70%;
+height:auto;
+}
+}
+
+.demo3{
+font-size:20px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:400;
+}
+
+.test1{
+    margin-left: 738px;
+	font-size:18px;
+	}
+	.test2{
+	margin-right: 288px;
+	font-size:18px;
+	
+	}
+	.test3{
+	margin-left: -297px;
+	font-size:18px;
+	}
+
+</style>
+</head>
+
+<body>
+
+<div>
+
+{%if user.is_authenticated%}
+<h4>Hi,{{user.username}}!!!Welcome<a href="{%url 'logout' %}">Logout</a></h4>
+
+{%endif%}
+</div>
+
+<span class="demo3" style="color:#FF6600"><marquee>Welcome to livewire Thirupporur</marquee></span>
+
+<div class="ff" >
+                   
+				   
+				   
+			 <img class="mySlides gg" src="https://lscdn.azureedge.net/biz-live/img/livewire-training-institute-10141592-3369201f.jpeg" width="100%" height="auto" >
+			 
+				   
+			<img class="mySlides gg" src="https://content3.jdmagicbox.com/comp/kanchipuram/m7/9999pxx44.xx44.180605203031.n9m7/catalogue/livewire-tiruporur-kanchipuram-computer-training-institutes-miqy6jft20.jpg" width="100%" height="auto">
+							 
+			 <img class="mySlides gg" src="https://content3.jdmagicbox.com/comp/kanchipuram/m7/9999pxx44.xx44.180605203031.n9m7/catalogue/livewire-tiruporur-kanchipuram-computer-training-institutes-yqidow53im.jpg" width="100%" height="auto">   
+						   
+						   
+</div>
+
+
+
+
+<br /><br />
+<p align="center" style="font-family:Arial, Helvetica, sans-serif; font-size:16px">Education is any kind of knowledge transitioned into learning.<br />
+
+LIVEWIRE promote niche training in IT, Electronics & Electricals creating experts for emerging technology industries and specialist technology jobs. A part of CADD Centre, which is Asia's largest CAD/CAM/CAE training institute. LIVEWIRE is present in 100 locations across India and 6 Countries.</p>
+<br /><br />
+
+
+<div>
+<div style="width: 100%"><iframe width="100%" height="600" src="
+https://maps.google.com/maps?width=100%&height=600&hl=en&q=Thirupporur+(livewire%20website)&ie=UTF8&t=&z=14&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/en/journey-planner.htm" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/en/journey-planner.htm">Route Finder</a></iframe></div><br />
+
+</div>
+
+<div>
+<nav class="navbar navbar-dark bg-dark" style="font-size: 14px;font-family: serif;    height: 70px;background-color: #73dada!important;">
+
+<a class="navbar-brand test1 " href="{% url 'home' %}" style="color: #000000">Help </a>
+<a class="navbar-brand  test2" href="{% url 'home' %}" style="color: #000000"><i class="fa fa-phone"></i>&nbsp;&nbsp;9080631650 </a>
+<a class="navbar-brand  test3" href="{% url 'home' %}" style="color: #000000"><i class="fa fa-envelope"></i>&nbsp;&nbsp;livewireindia@gmail.com </a>
+</div>
+
+
+ <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+
+{%endblock%}

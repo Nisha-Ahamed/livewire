@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%block title%}{%endblock%}
+{%block content%}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<h1 align="center" >Add Course</h1>
+
+<form method="post" style="padding-left:500px">
+{%csrf_token%}
+
+{{form.as_p}}
+<input type="submit" name="savetodo" value="SaveTodo">
+</form>
+<br/><br/><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div>
+<nav class='navbar navbar-dark bg-dark' style="font-size: 16px;font-family:sans-serif; height:70px; background-color:#73dada!important;">
+  
+  <a class='navbar-brand test1' href="{% url 'home' %}">Help</a>
+  <a class='navbar-brand test2' href="{% url 'home' %}"><i class="fas fa-phone"></i>&nbsp;&nbsp;+9080631650</a>
+  <a class='navbar-brand test3' href="{% url 'home' %}"><i class="fas fa-envelope-open"></i>&nbsp;&nbsp;livewireindia@gmail.com</a>
+</nav>
+</div>
+
+{%endblock%}

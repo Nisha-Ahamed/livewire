@@ -1,0 +1,94 @@
+{%extends 'base.html'%}
+{%block title%}{%endblock%}
+{%block content%}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  padding: 8px;
+}
+table{
+ border-collapse: collapse;
+ width: 80%;
+}
+th{
+  height:50px;
+  background-color: #4CAF50;
+  color: white;
+}
+h1{
+text-align: center;
+font-family:times;
+}
+button{
+font: bold 14px Arial;
+}
+body {
+  background-color: white;
+}
+</style>
+</head>
+
+<h1>All Courses</h1>
+<table align="center">
+       <thead>
+                 <tr>
+					   
+                       <th>Title</th>
+                       <th>Description</th>
+                       <th>Created At</th>
+                       <th>Updated At</th>
+                       <th>Edit/Delete</th>
+               </tr>
+       </thead>
+	   
+	   
+<tbody>
+{%for todo in todos%}
+      <tr>
+	            
+				<td>{{todo.title}}</td>
+				<td>{{todo.description}}</td>
+				<td>{{todo.created_at}}</td>
+				<td>{{todo.updated_at}}</td>
+				<td>
+			<a href="{%url 'todo:todoedit' todo.id%}">   
+				<button style="background-color: Yellow; width:58px; height:34px;">Edit</button>
+			</a>
+			<a href="{%url 'todo:tododelete' todo.id%}">
+				<button style="background-color:Red; width:58px; height:34px;">Delete</button>
+			</a>
+				</td>
+	  </tr>
+
+
+
+{%endfor%}
+</tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<p align="center"> <b>Note : This page contains list of Courses with title and description and created time....</b></p>
+<br/>
+<br/>
+<br/>
+<div>
+<br/><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/><br/>
+<nav class='navbar navbar-dark bg-dark' style="font-size: 16px;font-family:sans-serif; height:70px; background-color:#73dada!important;">
+  
+  <a class='navbar-brand test1' href="http://127.0.0.1:8000/todos/help">Help</a>
+  <a class='navbar-brand test2' href="{% url 'home' %}"><i class="fas fa-phone"></i>&nbsp;&nbsp;+91 8990007818</a>
+  <a class='navbar-brand test3' href="{% url 'home' %}"><i class="fas fa-envelope-open"></i>&nbsp;&nbsp;livewireindia@gmail.com</a>
+</nav>
+</div>
+
+
+{%endblock%}
